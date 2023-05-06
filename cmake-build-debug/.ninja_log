@@ -1,0 +1,8 @@
+# ninja log v5
+1	126	7051096730539636	CMakeFiles/dec.dir/main.c.obj	e648b7ab1a5ac0cb
+10	161	7051097022075680	CMakeFiles/dec.dir/openFile.c.obj	edf23149b8747d53
+20	189	7051097022385659	CMakeFiles/dec.dir/File.c.obj	6437b6f963957038
+0	188	7051097232173146	build.ninja	a2e8c552cda66724
+13	143	7051097684694321	CMakeFiles/dec.dir/Decompressing.c.obj	38c2ee2b4bf1f445
+3	118	7051098543555055	CMakeFiles/dec.dir/Utilits.c.obj	67955751fdd3c391
+119	249	7051098544825007	dec.exe	788521b04318742d
