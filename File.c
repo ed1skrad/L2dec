@@ -85,8 +85,6 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
                 (*words)[*wordsSize] = str;
                 (*wordsSize)++;
 
-                str = NULL;
-                currSize = 0;
             }
         }
     }
