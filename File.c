@@ -39,7 +39,7 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
 
             currSize++;
             str = realloc(str, currSize*sizeof(char));
-            str[currSize-1] = '\0';
+
 
             if(*wordDec == NULL || (*wordDec)[*numberOfWords-1].secondWord != NULL)
             {
@@ -69,7 +69,7 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
             else {
                 currSize++;
                 str = realloc(str, currSize*sizeof(char));
-                str[currSize-1] = '\0';
+
 
                 *words = realloc(*words, ((*wordsSize) + 1) * sizeof(char *));
                 (*words)[*wordsSize] = strdup(str);
