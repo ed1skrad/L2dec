@@ -74,7 +74,8 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
                 *words = realloc(*words, ((*wordsSize) + 1) * sizeof(char *));
                 (*words)[*wordsSize] = strdup(str);
                 (*wordsSize)++;
-                
+
+                free(str);
 
                 str = calloc(2, sizeof(char));
                 str[0] = c;

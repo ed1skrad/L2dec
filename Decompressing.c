@@ -16,11 +16,10 @@ int Decompress(const char* filename, const char* output) {
         printf("Failed to open file\n");
         return 1;
     }
-    int i = 0;
-    int j = 0;
-    for (i = 0; i < wordsSize; i++) {
+
+    for (int i = 0; i < wordsSize; i++) {
         int founded = 0;
-        for(j = 0; j < numberOfWords; j++) {
+        for(int j = 0; j < numberOfWords; j++) {
             if(wordDec[j].firstWord == NULL || wordDec[j].secondWord == NULL)
                 continue;
             if(strcmp(words[i], wordDec[j].firstWord) == 0)
