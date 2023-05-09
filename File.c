@@ -75,6 +75,8 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
                 (*words)[*wordsSize] = strdup(str);
                 (*wordsSize)++;
 
+                free(str);
+
                 str = calloc(2, sizeof(char));
                 str[0] = c;
                 str[1] = '\0';
@@ -91,9 +93,12 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
 
     fclose(file);
 
-    free(str);
+    if (str != NULL) {
+        free(str);
+    }
 
     return 1;
 }
+
 
 
