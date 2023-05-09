@@ -31,6 +31,9 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
 
         if(ln == 0) {
             if(c != ' ' && c != '\n') {
+                if (str != NULL) {
+                    free(str);
+                }
                 str = realloc(str, (currSize+1)*sizeof(char));
                 str[currSize] = c;
                 currSize++;
@@ -38,8 +41,11 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
             }
 
             currSize++;
+            if (str != NULL) {
+                free(str);
+            }
             str = realloc(str, currSize*sizeof(char));
-
+            str[currSize-1] = '\0';
 
             if(*wordDec == NULL || (*wordDec)[*numberOfWords-1].secondWord != NULL)
             {
@@ -62,14 +68,20 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
         }
         else {
             if(punctuationMark(c) == 0) {
+                if (str != NULL) {
+                    free(str);
+                }
                 str = realloc(str, (currSize+1)*sizeof(char));
                 str[currSize] = c;
                 currSize++;
             }
             else {
                 currSize++;
+                if (str != NULL) {
+                    free(str);
+                }
                 str = realloc(str, currSize*sizeof(char));
-
+                str[currSize-1] = '\0';
 
                 *words = realloc(*words, ((*wordsSize) + 1) * sizeof(char *));
                 (*words)[*wordsSize] = strdup(str);
@@ -90,7 +102,7 @@ int fileConverting(const char* filename, struct WordDecompress** wordDec, int* n
     }
 
     fclose(file);
-    
+
     free(str);
 
     return 1;
